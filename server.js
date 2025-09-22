@@ -106,7 +106,9 @@ app.use(helmet({
 const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
-  'http://localhost:5000'];
+  'http://localhost:5000',
+  'https://frontend-datn-44dv.onrender.com'
+];
 app.use(cors({
   origin: function (origin, callback){
     if (!origin || allowedOrigins.includes(origin)){
@@ -241,7 +243,7 @@ setInterval(async () => {
       console.log(`[Schedule] Giữ nguyên trạng thái: ${shouldBeOn ? 'BẬT' : 'TẮT'} lúc ${currentTime}`);
     }
   } else {
-    console.log(`[Schedule] Không có lịch phù hợp lúc ${currentTime}`);
+    // console.log(`[Schedule] Không có lịch phù hợp lúc ${currentTime}`);
   }
 }, 10000);
 
