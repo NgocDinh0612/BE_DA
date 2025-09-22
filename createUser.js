@@ -15,10 +15,10 @@ async function createUser() {
 
     // Dữ liệu người dùng
     const userData = {
-      firstName: process.env.FIRST_NAME || 'Admin',
-      lastName: process.env.LAST_NAME || 'User',
-      email: process.env.EMAIL || 'admin@example.com',
-      contact: process.env.CONTACT || '0987654321', // Số điện thoại hợp lệ (10 chữ số, bắt đầu bằng 0)
+      firstName: process.env.FIRST_NAME || 'Admin1',
+      lastName: process.env.LAST_NAME || 'User1',
+      email: process.env.EMAIL || 'admin1@example.com',
+      contact: process.env.CONTACT || '0987654322', // Số điện thoại hợp lệ (10 chữ số, bắt đầu bằng 0)
       address1: process.env.ADDRESS1 || '123 Đường Láng, Hà Nội',
       username: process.env.USERNAME || 'admin1',
       password: await bcrypt.hash(process.env.PASSWORD || '123456', 10),
