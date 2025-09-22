@@ -107,7 +107,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
   'http://localhost:5000',
-  'https://frontend-datn-44dv.onrender.com'
+  'https://backend-datn-j1bk.onrender.com'
 ];
 app.use(cors({
   origin: function (origin, callback){
