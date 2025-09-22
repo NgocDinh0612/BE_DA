@@ -15,13 +15,13 @@ async function createUser() {
 
     // Dữ liệu người dùng
     const userData = {
-      firstName: process.env.FIRST_NAME || 'Admin1',
-      lastName: process.env.LAST_NAME || 'User1',
-      email: process.env.EMAIL || 'admin1@example.com',
-      contact: process.env.CONTACT || '0987654322', // Số điện thoại hợp lệ (10 chữ số, bắt đầu bằng 0)
-      address1: process.env.ADDRESS1 || '123 Đường Láng, Hà Nội',
-      username: process.env.USERNAME || 'ngocdinh',
-      password: await bcrypt.hash(process.env.PASSWORD || '123456', 10),
+      firstName: process.env.FIRST_NAME || 'Admin123',
+      lastName: process.env.LAST_NAME || 'User123',
+      email: process.env.EMAIL || 'dinh@example.com',
+      contact: process.env.CONTACT || '0948707845', // Số điện thoại hợp lệ (10 chữ số, bắt đầu bằng 0)
+      address1: process.env.ADDRESS1 || 'Bình Định ',
+      username: process.env.USERNAME || 'ngocdinh123',
+      password: await bcrypt.hash(process.env.PASSWORD || '12345678', 10),
       role: process.env.ROLE || 'admin',
     };
 
