@@ -355,13 +355,12 @@ router.post("/register", async (req, res) => {
 router.get("/pending", authenticate, async (req, res) => {
   try {
     const devices = await LightDevice.find({ user: null, isDeleted: { $ne: true } });
-    res.json({ ok: true, devices });
-    res.end();
-    console.log(`[GET /devices/pending] Sent response: ${JSON.stringify({ ok: true, devices })}`);
+    const response = { ok: true, devices };
+    console.log("[GET /devices/pending] response:", response);
+    return res.json(response);
   } catch (err) {
     console.error("[GET /devices/pending] error:", err.message);
-    res.status(500).json({ ok: false, message: "Lỗi khi lấy danh sách thiết bị chờ" });
-    res.end();
+    return res.status(500).json({ ok: false, message: "Lỗi khi lấy danh sách thiết bị" });
   }
 });
 
