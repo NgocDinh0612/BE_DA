@@ -109,17 +109,23 @@ const allowedOrigins = [
   'http://localhost:5000',
   'https://be-js12.onrender.com'
 ];
+// app.use(cors({
+//   origin: function (origin, callback){
+//     if (!origin || allowedOrigins.includes(origin)){
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   credentials: true,
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+// }));
+
 app.use(cors({
-  origin: function (origin, callback){
-    if (!origin || allowedOrigins.includes(origin)){
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
+  origin: '*',
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
 // Tạo HTTP server cho Socket.IO
 const http = require('http').createServer(app);
 const { Server } = require('socket.io');
